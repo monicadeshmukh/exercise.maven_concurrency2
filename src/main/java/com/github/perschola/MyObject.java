@@ -5,19 +5,30 @@ package com.github.perschola;
 
 //import org.jcp.xml.dsig.internal.SignerOutputStream;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.stream.IntStream;
 
 /**
  * Implemented By Monica Deshmukh
  */
-public class MyObject implements Runnable {
+ public class  MyObject implements Runnable {
+
+    @Override
     public void run() {
-        // TODO
-        IntStream.range(1,5).forEach(System.out::println);
+        System.out.println("Thread[ Thread-" + Thread.currentThread().getName() + ",5,Main]");
+        IntStream.rangeClosed(1, 5).forEach(System.out::println);
         try {
-            Thread.sleep(2*1000);
-        }catch (InterruptedException e){
-            System.out.println("Exception occurred: " + e);
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            if (Thread.currentThread().getName().equals(1) || Thread.currentThread().getName().equals(2))
+                Thread.currentThread().notifyAll();
+           // e.printStackTrace();
         }
     }
 }
+
+  /**  Write a Java program that starts three threads
+    each will take 1 second to print out each number from 1 - 5.
+        However, the second and third thread must wait until the first thread finishes.
+        Use sleep and join.*/
