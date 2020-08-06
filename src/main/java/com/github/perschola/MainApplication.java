@@ -18,8 +18,8 @@ public class MainApplication {
         thread3.start();
         thread3.interrupt();*/
 
-        /************ Part3  *************************************/
-        Runnable part3Object1 = new Part3();
+        /************ Part3  ************************************/
+       /* Runnable part3Object1 = new Part3();
         Thread part3Thread1 = new Thread(part3Object1);
         Runnable part3Object2 = new Part3();
         Thread part3Thread2 = new Thread(part3Object2);
@@ -39,5 +39,23 @@ public class MainApplication {
         //thread2.notifyAll();
 
         //myObject.run();
+    }*/
+
+        /*********** Part 4 ********************/
+        Part4 part4Obj1 = new Part4();
+        Part4 part4Obj2 = new Part4();
+        Part4 part4Obj3 = new Part4();
+
+        Thread part4Thread1 = new Thread(part4Obj1);
+        Thread part4Thread2 = new Thread(part4Obj2);
+        Thread part4Thread3 = new Thread(part4Obj3);
+
+        part4Thread1.setPriority(Thread.MIN_PRIORITY);
+        part4Thread2.setPriority(Thread.NORM_PRIORITY);
+        part4Thread3.setPriority(Thread.MAX_PRIORITY);
+
+        part4Thread1.start();
+        part4Thread2.start();
+        part4Thread3.start();
     }
 }
