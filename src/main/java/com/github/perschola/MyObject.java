@@ -1,12 +1,9 @@
 package com.github.perschola;
-/*Part 1: Write a Java program that starts two threads
-        each thread will print the numbers from 1 - 4.
-        While performing this task each thread will be at sleep for two seconds*/
-
-//import org.jcp.xml.dsig.internal.SignerOutputStream;
-
-import org.w3c.dom.ls.LSOutput;
-
+/**  Part 2:
+ * Write a Java program that starts three threads
+ each will take 1 second to print out each number from 1 - 5.
+ However, the second and third thread must wait until the first thread finishes.
+ Use sleep and join.*/
 import java.util.stream.IntStream;
 
 /**
@@ -28,7 +25,3 @@ import java.util.stream.IntStream;
     }
 }
 
-  /**  Write a Java program that starts three threads
-    each will take 1 second to print out each number from 1 - 5.
-        However, the second and third thread must wait until the first thread finishes.
-        Use sleep and join.*/
